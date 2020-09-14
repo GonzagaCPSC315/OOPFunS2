@@ -18,7 +18,44 @@ import Foundation
 // CustomStringConvertible is a protocol with one property in it
 // a String description
 // like toString() the method in Java
-class Book: CustomStringConvertible {
+//class Book: CustomStringConvertible {
+//    // properties
+//    var ISBN: String = ""
+//    var title: String = ""
+//    var author: String = ""
+//    var numPages: Int = 0
+//    // description is a computed property
+//    var description: String {
+//        return "\(title) by \(author)"
+//    }
+//
+//    // an initializer is like a constructor
+//    // if you initialize all the values for properties at declaration,
+//    // then Swift is going to give you a default initializer
+//    init(ISBN: String, title: String, author: String, numPages: Int) {
+//        self.ISBN = ISBN
+//        self.title = title
+//        self.author = author
+//        self.numPages = numPages
+//    }
+//
+//    // when we add an initializer, we lose the default value initializer
+//    // you might see init?() this a called a failable initializer
+//    // if an initializer cannot initialize an object, it will return nil (optional)
+//
+//    // methods
+//}
+
+// structs are quite powerful in Swift
+// Int, Double, Bool, Array, String, etc. are all structs
+// its simpler to note their differences from classes
+// 1. classes support inheritance, structs do not
+// 2. classes are reference types, structs are value types
+// 3. structs provide a default memberwise initializer, that classes do not
+// 4. if you have a method in a struct that changes state, the method has to be labeled with mutating
+
+// change Book to be a struct type
+struct Book: CustomStringConvertible {
     // properties
     var ISBN: String = ""
     var title: String = ""
