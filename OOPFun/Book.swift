@@ -65,7 +65,22 @@ struct Book: CustomStringConvertible {
     var description: String {
         return "\(title) by \(author)"
     }
-    var price: Double = 0.0
+    // property observers
+    // you can monitor when a property gets updated
+    // and execute code accordingly
+    var price: Double = 0.0 {
+        // we can observe with willSet and didSet
+        willSet {
+            // this code executes right before price is updated with newValue
+            print("\(price) is about to be set to \(newValue)")
+        }
+        didSet {
+            // this code executes right after price is set to the new value
+            // can still access the old value with oldValue
+            print("price is now \(price). before it was \(oldValue)")
+        }
+    }
+    var genre: Genre = .horror
     
     // methods
     // example of a mutating method
