@@ -31,9 +31,12 @@ func bookClassDriver() {
     print(book1)
     print(book2)
     
-    var book3 = Book(ISBN: "30495-XXX", title: "Harry Potter and the Prisoner of Azkaban", author: "JK Rowling", numPages: 400)
+    var book3 = Book(ISBN: "30495-XXX", title: "Harry Potter and the Prisoner of Azkaban", author: "JK Rowling", numPages: 400, price: 10.0)
     print(book3)
     // print(book1 == book3)
+    print(book3.price)
+    book3.discountPrice(withPercent: 20)
+    print(book3.price)
 }
 
 bookClassDriver()
